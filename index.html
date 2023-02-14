@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Our Love Story</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+	<script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+<div id="mainDiv">
+	<div id="content">
+		<div id="code">
+			<span class="comments">##</span><br/>
+			<span class="comments">小乖,</span><br/>
+			<span class="comments">接来来你看到的内容，都是我在这个网页上给你制作出来哒,这样的形式会感觉你与我是最隐秘的关系.</span><br/>
+			<span class="comments">##</span><br/>
+			大乖 = 主人(<span class="string">"你最好的"</span>);<br/>
+			小乖 = 乖狗(<span class="string">"我最乖的"</span>);<br/>
+			<span class="comments"># 2023年02月11日，小乖遇见我的时间. </span><br/>
+			我承认在那天确实没想到会想着能与你长久的建立关系<br/>
+			<span class="comments"># 2023年02月12日，开始对你的一些想法有些了解. </span><br/>
+			看到你的瞬间内容后，我觉得你是一个认真的乖狗，让我心里触动了<br/>
+			<span class="comments"># 2023年02月12日，我给乖狗取了名字，叫做“小乖”.</span><br/>
+			能够感受出来，乖狗貌似接受了小乖这个名称，主人与小乖正式建立了基础的联系<br/>
+			<span class="comments"># 2023年02月13日，主人给小乖的第一节课开始了.</span><br/>
+			小乖认真的态度让我刮目相看，我愈发想把你调教成我心里的那个模样<br/>
+			<span class="comments"># 2023年02月14日，主人给小乖写了一些话.</span><br/>
+			就是如上这些，希望小乖会耐心看完~~~<br/>
+			<!-- <span class="comments"># We enjoy cuisine together.</span><br/>
+			dine(u, i)<br/>
+			<span class="comments"># We enjoy appointment together.</span><br/>
+			appoint(u, i)<br/>
+			<span class="comments"># We enjoy vacation together.</span><br/>
+			vacation(u, i)<br/>
+			<span class="comments"># Sometimes there are a few conflicts between us.</span><br/>
+			conflict(u, i, sometimes=<span class="keyword">True</span>)<br/>
+			<span class="comments"># But we are getting more and more in harmony together.</span><br/>
+			u.in_harmony_with(i) <br/>
+			i.in_harmony_with(u) <br/>
+			<span class="comments"># You are the greatest love of my life.</span><br/>
+			while <span class="keyword">True</span>:<br/>
+			<span class="placeholder"></span><span class="keyword">if</span> u.with(i):<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>u = everything<br/>
+			<span class="placeholder"></span><span class="keyword">else</span>:<br/>
+			<span class="placeholder"></span><span class="placeholder"></span>everything = u<br/>
+			<span class="comments"># Waiting me marries you, we will be the happiest couple in the world.</span><br/>
+			i.marry(u, in_the_future=<span class="keyword">True</span>)<br/>
+			i.live_happily_forever_with(u)<br/>
+			<span class="comments"># I love you forever.</span><br/> -->
+		</div>
+		<div id="loveHeart">
+			<canvas id="garden"></canvas>
+			<div id="words">
+				<div id="messages">
+					小乖, 希望你成为我心里最期待的那只🐶
+					<div id="elapseClock"></div>
+				</div>
+				<div id="loveu">
+					爱你的主人.<br/>
+					<div class="signature">- 大乖</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="copyright">
+		Copyright © 2023 <a href='https://empireangle.github.io/xiaoguai.github.io/'>小乖の主人</a> 2023-ever
+	</div>
+</div>
+<script type="text/javascript">
+	var offsetX = $("#loveHeart").width() / 2;
+	var offsetY = $("#loveHeart").height() / 2 - 55;
+	var together = new Date();
+	// 此处月份介于 0 ~ 11 之间。用本地时间表示，如 8 月要用 7 表示。
+	together.setFullYear(2023, 1, 12);
+	together.setHours(0);
+	together.setMinutes(0);
+	together.setSeconds(0);
+	together.setMilliseconds(0);
+
+	if (!document.createElement('canvas').getContext) {
+		var msg = document.createElement("div");
+		msg.id = "errorMsg";
+		msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+";
+		document.body.appendChild(msg);
+		$("#code").css("display", "none")
+		$("#copyright").css("position", "absolute");
+		$("#copyright").css("bottom", "10px");
+		document.execCommand("stop");
+	} else {
+		setTimeout(function () {
+			startHeartAnimation();
+		}, 5000);
+
+		timeElapse(together);
+		setInterval(function () {
+			timeElapse(together);
+		}, 500);
+
+		adjustCodePosition();
+		$("#code").typewriter();
+	}
+</script>
+</body>
+</html>
